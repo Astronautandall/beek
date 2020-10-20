@@ -2,7 +2,7 @@
 import React from "react";
 
 // Third Party
-import { Grid, Container } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import { faCheckCircle, faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -15,6 +15,44 @@ const AudioBookCard = ({ audiobook }) => {
         audiobook.title.length > TITLE_LENGHT_LIMIT
             ? audiobook.title.substring(0, TITLE_LENGHT_LIMIT) + "..."
             : audiobook.title;
+
+    const convertSecondstoHourMinutesSeconds = (seconds) => {
+        let remainingSeconds = 0;
+        const hours = Math.floor(seconds / 3600);
+        remainingSeconds = seconds % 3600;
+
+        const minutes = Math.floor(remainingSeconds / 60);
+        remainingSeconds = remainingSeconds % 60;
+        return [hours, minutes, remainingSeconds];
+    };
+
+    const renderRemaingTime = (runtime, progress) => {
+        const [hours, minutes, seconds] = runtime.split(":");
+        if (progress === 0) return `${hours}h ${minutes}m`;
+        if (progress === 100) return "Terminado";
+
+        const totalTimeInSeconds =
+            parseInt(hours) * 3600 + parseInt(minutes) * 60 + parseInt(seconds);
+
+        const remaingingProgress = (100 - audiobook.progress) / 100;
+        const remainingSeconds = Math.floor(
+            totalTimeInSeconds * remaingingProgress
+        );
+        const remainingTime = convertSecondstoHourMinutesSeconds(
+            remainingSeconds
+        );
+
+        return `-${remainingTime[0]}h ${remainingTime[1]}m`;
+
+        // console.log(
+        //     `Runtime: ${hours}:${minutes}:${seconds},
+        //     Total Secinds: ${totalTimeInSeconds},
+        //     Progress: ${audiobook.progress},
+        //     Remaining Progress: ${remaingingProgress},
+        //     Remaining Seconds: ${remainingSeconds},
+        //     Remaining Time: ${remainingTime}`
+        // );
+    };
 
     return (
         <Grid.Row columns={2}>
@@ -125,7 +163,10 @@ const AudioBookCard = ({ audiobook }) => {
                                 textAlign: "right",
                             }}
                         >
-                            -10
+                            {renderRemaingTime(
+                                audiobook.runtime,
+                                audiobook.progress
+                            )}
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>

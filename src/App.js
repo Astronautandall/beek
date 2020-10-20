@@ -10,7 +10,7 @@ import AudioBookCard from "./components/AudiobookCard";
 function App() {
     const renderAudiobooks = (audiobooks) => {
         return audiobooks.map((audiobook) => (
-            <AudioBookCard audiobook={audiobook} />
+            <AudioBookCard audiobook={audiobook} key={audiobook.id} />
         ));
     };
 
