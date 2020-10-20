@@ -63,14 +63,12 @@ const AudioBookCard = ({ audiobook }) => {
                         height: 100,
                         width: 100,
                         borderRadius: 10,
-                        border: "1px solid #dfdede",
                     }}
                 />
             </Grid.Column>
-            <Grid.Column width={10}>
+            <Grid.Column width={10} style={{ paddingRight: 30 }}>
                 <Grid
                     style={{
-                        border: "1px solid yellow",
                         marginTop: 0,
                         padding: 0,
                     }}
@@ -102,15 +100,20 @@ const AudioBookCard = ({ audiobook }) => {
                             fontWeight: "bold",
                             margin: 0,
                             padding: 0,
-                            border: "1px solid red",
+                            fontSize: "0.9em",
                         }}
                     >
                         {audiobook.authors.map((author) => author)}
                     </Grid.Row>
                     <Grid.Row
-                        style={{ color: "#676767", margin: 0, padding: 0 }}
+                        style={{
+                            color: "#676767",
+                            margin: 0,
+                            padding: 0,
+                            fontSize: "0.8em",
+                        }}
                     >
-                        {audiobook.narrators.map((narrator) => narrator)}
+                        {audiobook.narrators.join(", ")}
                     </Grid.Row>
                     {audiobook.progress > 0 && (
                         <Grid.Row colums={2} style={{ margin: 0, padding: 0 }}>
@@ -119,6 +122,7 @@ const AudioBookCard = ({ audiobook }) => {
                                 style={{
                                     margin: 0,
                                     padding: 0,
+                                    fontSize: "0.8em",
                                 }}
                             >
                                 {audiobook.progress}%
@@ -138,28 +142,36 @@ const AudioBookCard = ({ audiobook }) => {
 
                     <Grid.Row colums={2} style={{ margin: 0, padding: 0 }}>
                         <Grid.Column
-                            width={12}
+                            width={8}
                             style={{
                                 margin: 0,
                                 padding: 0,
+                                color: "#676767",
                             }}
                         >
                             {audiobook.isDownloaded && (
                                 <div>
-                                    <FontAwesomeIcon
-                                        icon={faCheckCircle}
-                                        color="#36dca5"
-                                    />{" "}
-                                    Descargado
+                                    <div style={{ fontSize: "0.8em" }}>
+                                        <FontAwesomeIcon
+                                            icon={faCheckCircle}
+                                            color="#36dca5"
+                                            style={{
+                                                fontSize: "1.5em",
+                                                paddingTop: 5,
+                                            }}
+                                        />{" "}
+                                        Descargado
+                                    </div>
                                 </div>
                             )}
                         </Grid.Column>
                         <Grid.Column
-                            width={4}
+                            width={8}
                             style={{
                                 margin: 0,
                                 padding: 0,
-
+                                color: "#676767",
+                                fontSize: "0.8em",
                                 textAlign: "right",
                             }}
                         >

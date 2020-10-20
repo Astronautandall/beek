@@ -6,6 +6,8 @@ import audiobooks_data from "./data/audiobooks-data.json";
 
 import { Grid, Container } from "semantic-ui-react";
 import AudioBookCard from "./components/AudiobookCard";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function App() {
     const renderAudiobooks = (audiobooks) => {
@@ -29,7 +31,33 @@ function App() {
 
     return (
         <Container>
-            <Grid>{renderAudiobooks(audiobooks)}</Grid>
+            <div className="ui fixed menu">
+                <div
+                    style={{
+                        textAlign: "center",
+
+                        width: "100%",
+                        fontWeight: "bold",
+                        paddingTop: 10,
+                        paddingLeft: 20,
+                    }}
+                >
+                    Audiolibros
+                </div>
+                <div
+                    className="right menu"
+                    style={{
+                        paddingRight: 20,
+                        paddingTop: 10,
+                        fontSize: 20,
+                    }}
+                >
+                    <FontAwesomeIcon icon={faBars} />
+                </div>
+            </div>
+            <Grid style={{ marginTop: 10 }}>
+                {renderAudiobooks(audiobooks)}
+            </Grid>
         </Container>
     );
 }
