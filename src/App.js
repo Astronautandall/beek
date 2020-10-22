@@ -70,16 +70,13 @@ function App() {
                         fontSize: 20,
                     }}
                 >
-                    <FontAwesomeIcon icon={faBars} />
+                    <a href="#" onClick={() => setOpen(true)}>
+                        <FontAwesomeIcon icon={faBars} color="black" />
+                    </a>
                 </div>
             </div>
-            <OrderByOptions
-                selected={selectedFilter}
-                allOptions={orderOptionsEnum}
-                onChange={onOrderChange}
-            />
+
             <Grid style={{ marginTop: 10 }}>
-                <button onClick={() => setOpen(true)}>Open sheet</button>
                 {renderAudiobooks(audiobooks)}
             </Grid>
 
@@ -92,7 +89,12 @@ function App() {
                 <Sheet.Container>
                     <Sheet.Header />
                     <Sheet.Content>
-                        {/* Your sheet content goes here */}
+                        <OrderByOptions
+                            selected={selectedFilter}
+                            allOptions={orderOptionsEnum}
+                            onChange={onOrderChange}
+                            onCancel={() => setOpen(false)}
+                        />
                     </Sheet.Content>
                 </Sheet.Container>
 
