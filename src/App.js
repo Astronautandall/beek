@@ -1,33 +1,51 @@
+// React
 import React from "react";
-import "./App.css";
 
+// CSS
+import "./App.css";
 import "semantic-ui-css/semantic.min.css";
+
+// Data
 import audiobooks_data from "./data/audiobooks-data.json";
 
+// Third Party
 import { Grid, Container } from "semantic-ui-react";
-import AudioBookCard from "./components/AudiobookCard";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Sheet from "react-modal-sheet";
+
+// Local
+import AudioBookCard from "./components/AudiobookCard";
+import OrderByOptions from "./components/OrderByOptions";
+import { getOrderFunc } from "./utils";
+import { orderOptionsEnum } from "./constants";
 
 function App() {
+    const defaultOrder = orderOptionsEnum.TITLE;
+    const [selectedFilter, setSelectedFilter] = React.useState(defaultOrder);
+    const [audiobooks, setAudiobooks] = React.useState([]);
+    const [isOpen, setOpen] = React.useState(false);
+
+    React.useEffect(() => {
+        console.log("Aloha");
+        setAudiobooks(
+            audiobooks_data.audiobooks.sort(getOrderFunc(defaultOrder))
+        );
+    }, [defaultOrder]);
+
+    const onOrderChange = (event) => {
+        setSelectedFilter(orderOptionsEnum[event.target.value]);
+        const orderFunction = getOrderFunc(
+            orderOptionsEnum[event.target.value]
+        );
+        setAudiobooks(audiobooks.sort(orderFunction));
+    };
+
     const renderAudiobooks = (audiobooks) => {
         return audiobooks.map((audiobook) => (
             <AudioBookCard audiobook={audiobook} key={audiobook.id} />
         ));
     };
-
-    const audiobooks = audiobooks_data.audiobooks;
-
-    // "id": 261778,
-    // 	"title": "10 minutos para atraer abundancia a tu vida",
-    // 	"authors": ["María Elena Molina"],
-    // 	"narrators": ["María Elena Molina"],
-    // 	"runtime": "00:06:27",
-    // 	"cover_url": "https://images.findawayworld.com/v1/image/cover/CD261524",
-    // 	"isDownloaded": true,
-    // 	"progress": 26,
-    // 	"lastPlayedDate": "2019-11-20T18:41:17.493Z",
-    //   "purchasedDate": "2019-11-19T23:57:12.589Z"
 
     return (
         <Container>
@@ -55,9 +73,31 @@ function App() {
                     <FontAwesomeIcon icon={faBars} />
                 </div>
             </div>
+            <OrderByOptions
+                selected={selectedFilter}
+                allOptions={orderOptionsEnum}
+                onChange={onOrderChange}
+            />
             <Grid style={{ marginTop: 10 }}>
+                <button onClick={() => setOpen(true)}>Open sheet</button>
                 {renderAudiobooks(audiobooks)}
             </Grid>
+
+            <Sheet
+                isOpen={isOpen}
+                onClose={() => setOpen(false)}
+                snapPoints={[400]}
+                initialSnap={0}
+            >
+                <Sheet.Container>
+                    <Sheet.Header />
+                    <Sheet.Content>
+                        {/* Your sheet content goes here */}
+                    </Sheet.Content>
+                </Sheet.Container>
+
+                <Sheet.Backdrop />
+            </Sheet>
         </Container>
     );
 }
