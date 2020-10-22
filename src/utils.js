@@ -30,3 +30,13 @@ export const getOrderFunc = (value) => {
     }
     return orderFunc;
 };
+
+export const convertSecondsToHourMinutesSeconds = (seconds) => {
+    let remainingSeconds = 0;
+    const hours = Math.floor(seconds / 3600);
+    remainingSeconds = seconds % 3600;
+
+    const minutes = Math.floor(remainingSeconds / 60);
+    remainingSeconds = remainingSeconds % 60;
+    return [hours, minutes, remainingSeconds];
+};

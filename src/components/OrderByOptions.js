@@ -7,11 +7,7 @@ const OrderByOptions = ({ selected, allOptions, onChange, onCancel }) => {
 
         for (let key in allOptions) {
             const input = (
-                <label
-                    className="checkbox-container"
-                    key={key}
-                    style={{ marginBottom: 40 }}
-                >
+                <label className="checkbox-container" key={key}>
                     {allOptions[key]}
                     <input
                         type="radio"
@@ -31,28 +27,9 @@ const OrderByOptions = ({ selected, allOptions, onChange, onCancel }) => {
     return (
         <React.Fragment>
             <Container>
-                <div
-                    style={{
-                        color: "#676767",
-                        marginBottom: 20,
-                        marginTop: 20,
-                    }}
-                >
-                    Ordenar por
-                </div>
+                <div className="modal-title">Ordenar por</div>
                 {renderOptionInput()}
-                <button
-                    style={{
-                        width: "100%",
-                        border: "none",
-                        height: 50,
-                        borderRadius: 30,
-                        fontWeight: "bold",
-                        backgroundColor: "#6fe2e6",
-                        color: "#262525",
-                    }}
-                    onClick={onCancel}
-                >
+                <button className="modal-cancel-btn" onClick={onCancel}>
                     Cancelar
                 </button>
             </Container>

@@ -1,43 +1,4 @@
-.App {
-    text-align: center;
-}
-
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-.App-link {
-    color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* The container */
+/* Checkbox */
 .checkbox-container {
     display: block;
     position: relative;
@@ -49,6 +10,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    margin-bottom: 40px;
 }
 
 /* Hide the browser's default radio button */
@@ -101,6 +63,18 @@
     background: #262525;
 }
 
+/* Custom Semantic UI */
+
+.ui.grid > .row {
+    padding: 0;
+}
+
+.ui.grid > .column:not(.row),
+.ui.grid > .row > .column {
+    margin: 0;
+    padding: 0;
+}
+
 /* Navbar */
 .navbar-title {
     text-align: center;
@@ -114,4 +88,40 @@
     padding-right: 20px;
     padding-top: 10px;
     font-size: 20px;
+}
+
+/* Modal */
+.modal-cancel-btn {
+    width: 100%;
+    border: none;
+    height: 50px;
+    border-radius: 30px;
+    font-weight: bold;
+    background-color: #6fe2e6;
+    color: #262525;
+}
+
+.modal-title {
+    color: #676767;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* Audiobook card */
+.audiobook {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ui.grid {
+    margin: 0;
+}
+
+.audiobook.row {
+    padding: 0;
+}
+.audiobook-cover-img {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
 }
