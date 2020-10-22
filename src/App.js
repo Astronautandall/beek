@@ -10,13 +10,12 @@ import audiobooks_data from "./data/audiobooks-data.json";
 
 // Third Party
 import { Grid, Container } from "semantic-ui-react";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Sheet from "react-modal-sheet";
 
 // Local
 import AudioBookCard from "./components/AudiobookCard";
 import OrderByOptions from "./components/OrderByOptions";
+import Navbar from "./components/Navbar";
 import { getOrderFunc } from "./utils";
 import { orderOptionsEnum } from "./constants";
 
@@ -47,42 +46,19 @@ function App() {
         ));
     };
 
+    const closeModal = () => {
+        setOpen(false);
+    };
+
     return (
         <Container>
-            <div className="ui fixed menu">
-                <div
-                    style={{
-                        textAlign: "center",
-
-                        width: "100%",
-                        fontWeight: "bold",
-                        paddingTop: 10,
-                        paddingLeft: 20,
-                    }}
-                >
-                    Audiolibros
-                </div>
-                <div
-                    className="right menu"
-                    style={{
-                        paddingRight: 20,
-                        paddingTop: 10,
-                        fontSize: 20,
-                    }}
-                >
-                    <a href="#" onClick={() => setOpen(true)}>
-                        <FontAwesomeIcon icon={faBars} color="black" />
-                    </a>
-                </div>
-            </div>
-
+            <Navbar onMenuClick={() => setOpen(true)} />
             <Grid style={{ marginTop: 10 }}>
                 {renderAudiobooks(audiobooks)}
             </Grid>
-
             <Sheet
                 isOpen={isOpen}
-                onClose={() => setOpen(false)}
+                onClose={closeModal}
                 snapPoints={[400]}
                 initialSnap={0}
             >
@@ -93,12 +69,12 @@ function App() {
                             selected={selectedFilter}
                             allOptions={orderOptionsEnum}
                             onChange={onOrderChange}
-                            onCancel={() => setOpen(false)}
+                            onCancel={closeModal}
                         />
                     </Sheet.Content>
                 </Sheet.Container>
 
-                <Sheet.Backdrop />
+                <Sheet.Backdrop onTap={closeModal} />
             </Sheet>
         </Container>
     );
