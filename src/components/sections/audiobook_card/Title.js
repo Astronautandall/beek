@@ -13,15 +13,13 @@ const Title = ({ title }) => {
     return (
         <Grid.Row columns={2}>
             <Grid.Column width={14}>
-                <strong>{title}</strong>
+                <p className="audiobook-title">{title}</p>
             </Grid.Column>
-            <Grid.Column
-                width={2}
-                style={{
-                    textAlign: "right",
-                }}
-            >
-                <FontAwesomeIcon icon={faEllipsisH} />
+            <Grid.Column width={2}>
+                <FontAwesomeIcon
+                    icon={faEllipsisH}
+                    style={{ fontSize: "24px", textAlign: "right" }}
+                />
             </Grid.Column>
         </Grid.Row>
     );

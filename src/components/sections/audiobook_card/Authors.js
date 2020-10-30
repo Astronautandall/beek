@@ -3,12 +3,8 @@ import { Grid } from "semantic-ui-react";
 
 const Authors = ({ authors }) => {
     return (
-        <Grid.Row
-            style={{
-                fontSize: "0.9em",
-            }}
-        >
-            <strong>{authors.join(", ")}</strong>
+        <Grid.Row>
+            <p className="audiobook-authors">{authors.join(", ")}</p>
         </Grid.Row>
     );
 };

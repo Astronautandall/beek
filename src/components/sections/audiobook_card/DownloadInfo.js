@@ -5,25 +5,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const DownloadInfo = ({ isDownloaded }) => {
     return (
-        <Grid.Column
-            width={8}
-            style={{
-                color: "#676767",
-            }}
-        >
+        <Grid.Column width={8}>
             {isDownloaded && (
-                <div>
-                    <div style={{ fontSize: "0.8em" }}>
-                        <FontAwesomeIcon
-                            icon={faCheckCircle}
-                            color="#36dca5"
-                            style={{
-                                fontSize: "1.5em",
-                                paddingTop: 5,
-                            }}
-                        />{" "}
-                        Descargado
-                    </div>
+                <div className="audiobook-download-text">
+                    <FontAwesomeIcon
+                        icon={faCheckCircle}
+                        color="#36dca5"
+                        style={{
+                            fontSize: "1.8em",
+                            paddingTop: 5,
+                        }}
+                    />{" "}
+                    Descargado
                 </div>
             )}
         </Grid.Column>

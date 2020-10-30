@@ -10,20 +10,10 @@ import ProgressBar from "../../ProgressBar";
 const Progress = ({ progress }) => {
     return (
         <Grid.Row colums={2}>
-            <Grid.Column
-                width={3}
-                style={{
-                    fontSize: "0.8em",
-                }}
-            >
-                {progress}%
+            <Grid.Column width={3}>
+                <p className="audiobook-read-percentage">{progress}%</p>
             </Grid.Column>
-            <Grid.Column
-                width={13}
-                style={{
-                    paddingTop: 8,
-                }}
-            >
+            <Grid.Column width={13}>
                 <ProgressBar percentage={progress} />
             </Grid.Column>
         </Grid.Row>

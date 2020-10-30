@@ -15,13 +15,14 @@ import RemainingTime from "./sections/audiobook_card/RemainingTime";
 const AudioBookCard = ({ audiobook }) => {
     return (
         <Grid.Row columns={2} className="audiobook">
-            <Grid.Column width={6}>
+            <Grid.Column width={5}>
                 <img
                     className="audiobook-cover-img"
                     src={audiobook.cover_url}
+                    alt={audiobook.title}
                 />
             </Grid.Column>
-            <Grid.Column width={10}>
+            <Grid.Column width={11}>
                 <Grid>
                     <Title title={audiobook.title} />
                     <Authors authors={audiobook.authors} />

@@ -23,15 +23,8 @@ const RemainingTime = ({ runtime, progress }) => {
     };
 
     return (
-        <Grid.Column
-            width={8}
-            style={{
-                color: "#676767",
-                fontSize: "0.8em",
-                textAlign: "right",
-            }}
-        >
-            {renderRemaingTime()}
+        <Grid.Column width={8}>
+            <p className="audiobook-remaining-time">{renderRemaingTime()}</p>
         </Grid.Column>
     );
 };
