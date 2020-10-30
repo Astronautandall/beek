@@ -2,16 +2,7 @@ import React from "react";
 
 const ProgressBar = (props) => {
     return (
-        <div
-            className="progress-bar"
-            style={{
-                position: "relative",
-                height: 4,
-                width: "100%",
-                borderRadius: 50,
-                background: "#edf1f3",
-            }}
-        >
+        <div className="progress-bar">
             <Filler percentage={props.percentage} />
         </div>
     );
@@ -24,13 +15,10 @@ const Filler = ({ percentage }) => {
             : "linear-gradient(to right, #53c2f2 , #35d7dc)";
     return (
         <div
-            className="filler"
+            className="progress-bar-filler"
             style={{
                 width: `${percentage}%`,
                 backgroundImage: color,
-                height: "100%",
-                borderRadius: "inherit",
-                position: "absolute",
             }}
         />
     );

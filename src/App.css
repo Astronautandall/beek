@@ -64,6 +64,10 @@
 }
 
 /* Bottom Modal */
+.ui.grid {
+    margin: 0;
+}
+
 .react-modal-sheet-drag-indicator {
     width: 28px !important;
     height: 35px;
@@ -121,6 +125,11 @@
     margin-bottom: 20px;
     margin-top: 20px;
     margin-left: 18px;
+}
+
+/* Audiobooks Grid */
+.audiobooks-grid {
+    margin-top: 12px !important;
 }
 
 /* Audiobook card */
@@ -205,18 +214,30 @@
     margin-bottom: 8px;
 }
 
+/* Progress Bar */
 .progress-bar-container {
     display: flex !important;
     align-items: center !important;
 }
 
-.ui.grid {
-    margin: 0;
+.progress-bar {
+    position: relative;
+    height: 4px;
+    width: 100%;
+    border-radius: 50px;
+    background-color: #edf1f3;
+}
+
+.progress-bar-filler {
+    height: 100%;
+    border-radius: inherit;
+    position: absolute;
 }
 
 .audiobook.row {
     padding: 0;
 }
+
 .audiobook-cover-img {
     height: 100px;
     width: 100px;
