@@ -110,6 +110,8 @@
     font-weight: bold;
     background-color: #6fe2e6;
     color: #262525;
+    font-family: "Nunito Sans";
+    font-size: 16px;
 }
 
 .modal-title {
