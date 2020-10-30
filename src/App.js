@@ -59,7 +59,7 @@ function App() {
             <Sheet
                 isOpen={isOpen}
                 onClose={closeModal}
-                snapPoints={[400]}
+                snapPoints={[330]}
                 initialSnap={0}
             >
                 <Sheet.Container>

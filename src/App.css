@@ -2,15 +2,15 @@
 .checkbox-container {
     display: block;
     position: relative;
-    padding-left: 35px;
-    padding-top: 5px;
+    padding-left: 42px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
+    font-family: "Nunito Sans";
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
 }
 
 /* Hide the browser's default radio button */
@@ -23,8 +23,8 @@
 /* Create a custom radio button */
 .checkmark {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -4px;
+    left: 10px;
     height: 25px;
     width: 25px;
     background-color: #edf1f3;
@@ -63,8 +63,17 @@
     background: #262525;
 }
 
-/* Custom Semantic UI */
+/* Bottom Modal */
+.react-modal-sheet-drag-indicator {
+    width: 28px !important;
+    height: 35px;
+}
 
+.react-modal-sheet-header {
+    height: 35px !important;
+}
+
+/* Custom Semantic UI */
 .ui.grid > .row {
     padding: 0;
 }
@@ -104,15 +113,18 @@
 }
 
 .modal-title {
+    font-size: 12px;
+    font-family: "Nunito Sans";
     color: #676767;
     margin-bottom: 20px;
     margin-top: 20px;
+    margin-left: 18px;
 }
 
 /* Audiobook card */
 .audiobook {
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 13px;
+    margin-bottom: 13px;
 }
 
 .audiobook-title-container {
