@@ -80,15 +80,16 @@
     text-align: center;
     width: 100%;
     font-size: 17px;
+    line-height: 22px;
     font-weight: bold;
     padding-top: 10px;
     padding-left: 30px;
 }
 
 .navbar-menu-icon {
-    padding-right: 15px;
+    padding-right: 20px;
     padding-top: 10px;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 /* Modal */
@@ -110,8 +111,8 @@
 
 /* Audiobook card */
 .audiobook {
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 18px;
+    margin-bottom: 18px;
 }
 
 .audiobook-title-container {
@@ -121,6 +122,7 @@
 }
 
 .audiobook-title {
+    font-family: "Nunito Sans";
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
@@ -133,6 +135,7 @@
 }
 
 .audiobook-authors {
+    font-family: "Nunito Sans";
     font-weight: 700;
     font-size: 14px;
 }
@@ -144,6 +147,7 @@
 }
 
 .audiobook-narrators {
+    font-family: "Nunito Sans";
     font-weight: 400;
     font-size: 12px;
     color: #262525;
@@ -151,12 +155,14 @@
 }
 
 .audiobook-read-percentage {
+    font-family: "Nunito Sans";
     font-weight: 400;
     font-size: 12px;
     color: #262525;
 }
 
 .audiobook-download {
+    font-family: "Nunito Sans";
     font-weight: 400;
     font-size: 12px;
     color: #262525;
@@ -166,6 +172,7 @@
 }
 
 .audiobook-remaining-time {
+    font-family: "Nunito Sans";
     font-weight: 400;
     font-size: 12px;
     color: #262525;

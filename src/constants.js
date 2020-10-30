@@ -4,4 +4,4 @@ export const orderOptionsEnum = {
     PURCHASED_DATE: "Agregados recientemente",
 };
 
-export const TITLE_LENGHT_LIMIT = 25;
+export const TITLE_LENGHT_LIMIT = 23;
