@@ -16,6 +16,7 @@ As the app is very minimal the utils and the constants are in a single file, but
 The utils is a place meant to extract logic from components that can also be reused and tested more easily as it is dettached from design and app flow, for example
 string transformations, mathematical operations, etc.
 
+```
 📦 src
 ┣ 📂 components
 ┃ ┣ 📂 sections
@@ -30,3 +31,4 @@ string transformations, mathematical operations, etc.
 ┣ index.js
 ┣ utils.js
 ┣ constants.js
+```
