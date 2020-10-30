@@ -2,6 +2,7 @@
 import React from "react";
 
 // CSS
+import "@csstools/normalize.css";
 import "semantic-ui-css/semantic.min.css";
 import "./App.css";
 
@@ -26,7 +27,6 @@ function App() {
     const [isOpen, setOpen] = React.useState(false);
 
     React.useEffect(() => {
-        console.log("Aloha");
         setAudiobooks(
             audiobooks_data.audiobooks.sort(getOrderFunc(defaultOrder))
         );
