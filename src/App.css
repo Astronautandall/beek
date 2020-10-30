@@ -114,14 +114,33 @@
     margin-bottom: 12px;
 }
 
+.audiobook-title-container {
+    display: flex;
+    align-items: center !important;
+    height: 24px;
+}
+
 .audiobook-title {
     font-weight: 700;
     font-size: 16px;
+    line-height: 20px;
+}
+
+.audiobook-authors-container {
+    display: flex;
+    align-items: center !important;
+    height: 20px;
 }
 
 .audiobook-authors {
     font-weight: 700;
     font-size: 14px;
+}
+
+.audiobook-narrators-container {
+    display: flex;
+    align-items: center !important;
+    height: 20px;
 }
 
 .audiobook-narrators {
@@ -137,11 +156,13 @@
     color: #262525;
 }
 
-.audiobook-download-text {
+.audiobook-download {
     font-weight: 400;
     font-size: 12px;
     color: #262525;
     opacity: 0.7;
+    display: flex;
+    align-items: center;
 }
 
 .audiobook-remaining-time {
@@ -156,6 +177,16 @@
     color: "#36dca5";
     font-size: "1.8em";
     padding-top: 8px;
+}
+
+.audiobook-progress-container {
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.progress-bar-container {
+    display: flex !important;
+    align-items: center !important;
 }
 
 .ui.grid {

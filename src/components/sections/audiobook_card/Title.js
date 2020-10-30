@@ -11,7 +11,7 @@ const Title = ({ title }) => {
             : title;
 
     return (
-        <Grid.Row columns={2}>
+        <Grid.Row columns={2} className="audiobook-title-container">
             <Grid.Column width={14}>
                 <p className="audiobook-title">{title}</p>
             </Grid.Column>
